@@ -1,3 +1,4 @@
 secret
 myvenv/
 __pycache__/
+migrations/
