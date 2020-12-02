@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blogity:회원가입</title>
+</head>
+<body>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p>name</p>
+        <input type="text" name="name">
+        <br>
+        <p>email</p>
+        <input type="email" name="email">
+        <br>
+        <p>password</p>
+        <input type="password" name="password">
+        <br>
+        <!-- <p>confirm</p>
+        <input type="text" name="confirm">
+        <br> -->
+        <input type="submit" value="회원가입">
+    </form>
+</body>
+</html>
