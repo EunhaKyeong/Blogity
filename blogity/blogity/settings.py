@@ -142,3 +142,5 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 #로그인 후 이동할 경로
 LOGIN_REDIRECT_URL = 'http://127.0.0.1:3300'
+#로그아웃 후 이동할 경로
+LOGOUT_REDIRECT_URL = '/'
