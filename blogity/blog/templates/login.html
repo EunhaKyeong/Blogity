@@ -17,22 +17,29 @@
 <body>
     {% load socialaccount %}
     <div id="logreg-forms">
-        <form class="form-signin">
+        <form method="POST" action="" class="form-signin">
+            {% csrf_token %}
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
             <div class="social-login">
                 <div class="social text-center">
                     <a href="{% provider_login_url 'naver' %}"><img src="../static/img/naver_green.png" width="200"></a>
                 </div>
             </div>
-            <p style="text-align:center"> OR  </p>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <hr>
+            <!-- <p style="text-align:center"> OR  </p> -->
+            <!-- <form method="POST" action=""> -->
+                <input type="email" name='email' id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                <input type="password" name='password' id="inputPassword" class="form-control" placeholder="Password" required="">
+                <input type="submit" value="로그인">
+                <!-- <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>  로그인</button> -->
+            <!-- </form> -->
+            <hr>
+            <a href="/signup"><button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>  회원가입</button></a>
             
-            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
             <!-- <a href="#" id="forgot_pswd">Forgot password?</a>
             <hr>
             <p>Don't have an account!</p>
-            <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button> -->
+             -->
         </form>
 
             <form action="/reset/password/" class="form-reset">
