@@ -22,5 +22,6 @@ urlpatterns = [
     path('login/', include('blog.urls')),
     path('logout/', include('blog.urls')),
     path('signup/', include('blog.urls')),
+    path('signup/emailcheck/<str:email>', include('blog.urls')),
     path('account/', include('allauth.urls')),
 ]
