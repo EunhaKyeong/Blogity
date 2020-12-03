@@ -21,13 +21,13 @@ function email_check() {
             }
         });
     });
-
-    return false
 }
 
 //회원가입을 완료하기 전 이메일 중복확인 여부를 확인하는 함수.
-function is_email_check() {
-    if (check_result) {
-        window.alert('이메일 중복체크를 해주세요');
-    }
-}
+var form = document.getElementsByClassName('form')[0];
+form.addEventListener('submit', function(event){ 
+    if(check_result==false){ 
+        window.alert('이메일 중복체크를 해주세요'); 
+        event.preventDefault(); 
+    } 
+});

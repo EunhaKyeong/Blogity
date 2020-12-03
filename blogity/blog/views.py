@@ -10,9 +10,6 @@ from blog.models import Account
 def index(request):
     return render(request, 'index.html')
 
-def signup(request):
-    return render(request, 'signup.html')
-
 #회원가입
 class Signup(View):
     def post(self, request):
