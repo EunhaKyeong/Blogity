@@ -2,23 +2,42 @@
 <head>
     <meta charset="UTF-8">
     <title>blogity:회원가입</title>
+    <link href="../static/css/signup.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-    <form method="POST" action="">
-        {% csrf_token %}
-        <p>name</p>
-        <input type="text" name="name">
+    <div class="container">
+        <div class="row">
+            <h3 class="col-sm-offset-3 col-sm-6">Signup</h3>
+        </div>
         <br>
-        <p>email</p>
-        <input type="email" name="email">
-        <br>
-        <p>password</p>
-        <input type="password" name="password">
-        <br>
-        <!-- <p>confirm</p>
-        <input type="text" name="confirm">
-        <br> -->
-        <input type="submit" value="회원가입">
-    </form>
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-2">
+                
+            </div>
+            <div class="col-sm-6">
+                <form action="" method="post" accept-charset="utf-8" class="form" role="form">
+                    {% csrf_token %}
+                    <input type="text" name="name" value="" class="form-control input-lg" placeholder="Your Name"  />
+                    <div class="row">
+                        <div class="col-xs-8 col-md-8">
+                            <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  onkeyup="email_change()"/>                       </div>
+                        <div class="col-xs-4 col-md-4 text-right">
+                            <button type="button" class="btn btn-info btn-lg" onclick="email_check()">중복확인</button>                        
+                        </div>
+                    </div>
+                    <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />
+                    <input type="password" name="confirm" value="" class="form-control input-lg" placeholder="Confirm Password"  />
+                    <button class="btn btn-lg btn-info btn-block signup-btn" type="submit" onclick="is_email_check()">Create my account</button>
+                </form>          
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/signup.js"></script>
 </body>
 </html>
+
+
+
