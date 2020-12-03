@@ -18,7 +18,7 @@
     {% load socialaccount %}
     <div id="logreg-forms">
         <form method="POST" action="" class="form-signin">
-            {% csrf_token %}
+            
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
             <div class="social-login">
                 <div class="social text-center">
@@ -27,11 +27,12 @@
             </div>
             <hr>
             <!-- <p style="text-align:center"> OR  </p> -->
-            <!-- <form method="POST" action=""> -->
+            <!-- <form method="POST" action="/login/"> -->
+                {% csrf_token %}
                 <input type="email" name='email' id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
                 <input type="password" name='password' id="inputPassword" class="form-control" placeholder="Password" required="">
-                <input type="submit" value="로그인">
-                <!-- <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>  로그인</button> -->
+                <!-- <input type="submit" value="로그인"> -->
+                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>  로그인</button>
             <!-- </form> -->
             <hr>
             <a href="/signup"><button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>  회원가입</button></a>
@@ -92,6 +93,5 @@ $(()=>{
     </p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="../static/js/login.js"></script>
 </body>
 </html>
